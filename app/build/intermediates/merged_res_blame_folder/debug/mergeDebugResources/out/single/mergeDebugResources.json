@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_ic_search.xml.flat",
-        "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\drawable\\ic_search.xml"
-    },
-    {
         "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_ic_home.xml.flat",
         "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\drawable\\ic_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_ic_search.xml.flat",
+        "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\drawable\\ic_search.xml"
     },
     {
         "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_rounded_edittext_background.xml.flat",
@@ -14,6 +14,10 @@
     {
         "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "ar.edu.davinci.tufi_store.app-debug-41:/layout_activity_figurita_detail.xml.flat",
+        "source": "ar.edu.davinci.tufi_store.app-main-43:/layout/activity_figurita_detail.xml"
     },
     {
         "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_ic_launcher_foreground.xml.flat",
@@ -52,6 +56,10 @@
         "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\xml\\backup_rules.xml"
     },
     {
+        "merged": "ar.edu.davinci.tufi_store.app-debug-41:/drawable_ic_back_arrow.xml.flat",
+        "source": "ar.edu.davinci.tufi_store.app-main-43:/drawable/ic_back_arrow.xml"
+    },
+    {
         "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -76,8 +84,8 @@
         "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "ar.edu.davinci.tufi_store.app-debug-41:/drawable_rounded_button_background.xml.flat",
-        "source": "ar.edu.davinci.tufi_store.app-main-43:/drawable/rounded_button_background.xml"
+        "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_rounded_button_background.xml.flat",
+        "source": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-main-43:\\drawable\\rounded_button_background.xml"
     },
     {
         "merged": "C:\\Users\\D\\.gradle\\daemon\\8.11.1\\ar.edu.davinci.tufi_store.app-debug-41:\\drawable_ic_location.xml.flat",

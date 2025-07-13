@@ -2292,6 +2292,8 @@ dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
+dimen figurita_detail_image_height
+dimen figurita_detail_image_width
 dimen figurita_image_height
 dimen figurita_image_width
 dimen highlight_alpha_material_colored
@@ -3068,6 +3070,7 @@ drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable ic_arrow_back_black_24
+drawable ic_back_arrow
 drawable ic_call_answer
 drawable ic_call_answer_low
 drawable ic_call_answer_video
@@ -3261,6 +3264,7 @@ id animateToStart
 id antiClockwise
 id anticipate
 id app_name
+id app_name_detail
 id arc
 id asConfigured
 id async
@@ -3269,6 +3273,7 @@ id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
 id axisRelative
+id back_button
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -3278,11 +3283,17 @@ id bestChoice
 id blocking
 id bottom
 id bottom_categories
+id bottom_categories_detail
 id bottom_home
+id bottom_home_detail
 id bottom_locations
+id bottom_locations_detail
 id bottom_navigation
+id bottom_navigation_detail
 id bottom_store
+id bottom_store_detail
 id bottom_users
+id bottom_users_detail
 id bounce
 id bounceBoth
 id bounceEnd
@@ -3345,6 +3356,11 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detail_album_title
+id detail_comprar_button
+id detail_figurita_image
+id detail_figurita_name
+id detail_figurita_price
 id dialog_button
 id dimensions
 id direct
@@ -3701,6 +3717,7 @@ id unlabeled
 id up
 id useLogo
 id user_button
+id user_button_detail
 id vertical
 id vertical_only
 id view_offset_helper
@@ -3837,6 +3854,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_figurita_detail
 layout activity_locations
 layout activity_login
 layout activity_main
@@ -3962,6 +3980,7 @@ string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL
 string androidx_startup
 string app_name
 string appbar_scrolling_view_behavior
+string back_button_description
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand
@@ -4017,6 +4036,7 @@ string fallback_menu_item_open_in_browser
 string fallback_menu_item_share_link
 string fifawc22_figu_paredes
 string fifawc22_figu_romero
+string figurita_detail_image_description
 string gcm_defaultSenderId
 string google_api_key
 string google_app_id
@@ -4165,11 +4185,13 @@ string text_register
 string toast_added_to_cart
 string toast_figuritas_load_error
 string toast_figuritas_load_error_main
+string toast_image_load_error
 string toast_json_parse_error
 string toast_locations_load_error
 string toast_login_failed
 string toast_login_success
 string toast_logout_success
+string toast_no_figurita_data
 string toast_no_locations_found
 string toast_registration_failed
 string toast_registration_success

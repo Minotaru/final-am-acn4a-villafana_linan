@@ -2291,6 +2291,8 @@ int dimen disabled_alpha_material_light 0x7f060091
 int dimen fastscroll_default_thickness 0x7f060092
 int dimen fastscroll_margin 0x7f060093
 int dimen fastscroll_minimum_range 0x7f060094
+int dimen figurita_detail_image_height 0x7f060329
+int dimen figurita_detail_image_width 0x7f06032a
 int dimen figurita_image_height 0x7f060095
 int dimen figurita_image_width 0x7f060096
 int dimen highlight_alpha_material_colored 0x7f060097
@@ -3067,6 +3069,7 @@ int drawable design_snackbar_background 0x7f070099
 int drawable googleg_disabled_color_18 0x7f07009a
 int drawable googleg_standard_color_18 0x7f07009b
 int drawable ic_arrow_back_black_24 0x7f07009c
+int drawable ic_back_arrow 0x7f070109
 int drawable ic_call_answer 0x7f07009d
 int drawable ic_call_answer_low 0x7f07009e
 int drawable ic_call_answer_video 0x7f07009f
@@ -3260,6 +3263,7 @@ int id animateToStart 0x7f080051
 int id antiClockwise 0x7f080052
 int id anticipate 0x7f080053
 int id app_name 0x7f080054
+int id app_name_detail 0x7f08022b
 int id arc 0x7f080055
 int id asConfigured 0x7f080056
 int id async 0x7f080057
@@ -3268,6 +3272,7 @@ int id autoComplete 0x7f080059
 int id autoCompleteToEnd 0x7f08005a
 int id autoCompleteToStart 0x7f08005b
 int id axisRelative 0x7f08005c
+int id back_button 0x7f08022c
 int id barrier 0x7f08005d
 int id baseline 0x7f08005e
 int id beginOnFirstDraw 0x7f08005f
@@ -3277,11 +3282,17 @@ int id bestChoice 0x7f080062
 int id blocking 0x7f080063
 int id bottom 0x7f080064
 int id bottom_categories 0x7f080065
+int id bottom_categories_detail 0x7f08022d
 int id bottom_home 0x7f080066
+int id bottom_home_detail 0x7f08022e
 int id bottom_locations 0x7f080067
+int id bottom_locations_detail 0x7f08022f
 int id bottom_navigation 0x7f080068
+int id bottom_navigation_detail 0x7f080230
 int id bottom_store 0x7f080069
+int id bottom_store_detail 0x7f080231
 int id bottom_users 0x7f08006a
+int id bottom_users_detail 0x7f080232
 int id bounce 0x7f08006b
 int id bounceBoth 0x7f08006c
 int id bounceEnd 0x7f08006d
@@ -3344,6 +3355,11 @@ int id design_menu_item_action_area 0x7f0800a5
 int id design_menu_item_action_area_stub 0x7f0800a6
 int id design_menu_item_text 0x7f0800a7
 int id design_navigation_view 0x7f0800a8
+int id detail_album_title 0x7f080233
+int id detail_comprar_button 0x7f080234
+int id detail_figurita_image 0x7f080235
+int id detail_figurita_name 0x7f080236
+int id detail_figurita_price 0x7f080237
 int id dialog_button 0x7f0800a9
 int id dimensions 0x7f0800aa
 int id direct 0x7f0800ab
@@ -3700,6 +3716,7 @@ int id unlabeled 0x7f080210
 int id up 0x7f080211
 int id useLogo 0x7f080212
 int id user_button 0x7f080213
+int id user_button_detail 0x7f080238
 int id vertical 0x7f080214
 int id vertical_only 0x7f080215
 int id view_offset_helper 0x7f080216
@@ -3836,6 +3853,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_figurita_detail 0x7f0b0071
 int layout activity_locations 0x7f0b001c
 int layout activity_login 0x7f0b001d
 int layout activity_main 0x7f0b001e
@@ -3961,6 +3979,7 @@ int string androidx_credentials_TYPE_PUBLIC_KEY_CREDENTIAL 0x7f11001c
 int string androidx_startup 0x7f11001d
 int string app_name 0x7f11001e
 int string appbar_scrolling_view_behavior 0x7f11001f
+int string back_button_description 0x7f1100f6
 int string bottom_sheet_behavior 0x7f110020
 int string bottomsheet_action_collapse 0x7f110021
 int string bottomsheet_action_expand 0x7f110022
@@ -4016,6 +4035,7 @@ int string fallback_menu_item_open_in_browser 0x7f110053
 int string fallback_menu_item_share_link 0x7f110054
 int string fifawc22_figu_paredes 0x7f110055
 int string fifawc22_figu_romero 0x7f110056
+int string figurita_detail_image_description 0x7f1100f7
 int string gcm_defaultSenderId 0x7f110057
 int string google_api_key 0x7f110058
 int string google_app_id 0x7f110059
@@ -4164,11 +4184,13 @@ int string text_register 0x7f1100e6
 int string toast_added_to_cart 0x7f1100e7
 int string toast_figuritas_load_error 0x7f1100e8
 int string toast_figuritas_load_error_main 0x7f1100f5
+int string toast_image_load_error 0x7f1100f8
 int string toast_json_parse_error 0x7f1100e9
 int string toast_locations_load_error 0x7f1100ea
 int string toast_login_failed 0x7f1100eb
 int string toast_login_success 0x7f1100ec
 int string toast_logout_success 0x7f1100ed
+int string toast_no_figurita_data 0x7f1100f9
 int string toast_no_locations_found 0x7f1100ee
 int string toast_registration_failed 0x7f1100ef
 int string toast_registration_success 0x7f1100f0

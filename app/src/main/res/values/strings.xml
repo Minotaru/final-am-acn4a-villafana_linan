@@ -49,6 +49,10 @@
     <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
     <string name="no_figuritas_found_main">No se encontraron figuritas destacadas.</string>
     <string name="toast_figuritas_load_error_main">Error al cargar figuritas destacadas</string>
+    <string name="back_button_description">Botón de regresar</string>
+    <string name="figurita_detail_image_description">Imagen de la figurita %1$s</string>
+    <string name="toast_image_load_error">Error al cargar imagen</string>
+    <string name="toast_no_figurita_data">No se pudo cargar la información de la figurita.</string>
 
 
 </resources>

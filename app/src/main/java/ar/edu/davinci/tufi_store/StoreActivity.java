@@ -307,6 +307,18 @@ public class StoreActivity extends AppCompatActivity {
             cardView.setRadius(8);
             cardView.setCardElevation(4);
 
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(StoreActivity.this, FiguritaDetailActivity.class);
+                    intent.putExtra(FiguritaDetailActivity.EXTRA_ALBUM_TITLE, figurita.getAlbumTitle());
+                    intent.putExtra(FiguritaDetailActivity.EXTRA_FIGURITA_NAME, figurita.getFiguritaName());
+                    intent.putExtra(FiguritaDetailActivity.EXTRA_IMAGE_URL, figurita.getImageUrl());
+                    intent.putExtra(FiguritaDetailActivity.EXTRA_PRICE, figurita.getPrice());
+                    startActivity(intent);
+                }
+            });
+
             LinearLayout innerLayout = new LinearLayout(this);
             innerLayout.setLayoutParams(new LinearLayout.LayoutParams(
                     LinearLayout.LayoutParams.MATCH_PARENT,
