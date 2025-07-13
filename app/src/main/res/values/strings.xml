@@ -53,6 +53,14 @@
     <string name="figurita_detail_image_description">Imagen de la figurita %1$s</string>
     <string name="toast_image_load_error">Error al cargar imagen</string>
     <string name="toast_no_figurita_data">No se pudo cargar la información de la figurita.</string>
+    <string name="cart_screen_title">Mi Carrito</string>
+    <string name="cart_total_placeholder">Total: $0.00</string>
+    <string name="pay_button_text">Pagar</string>
+    <string name="cart_empty_message">El carrito está vacío.</string>
+    <string name="toast_login_required">Por favor, inicie sesión para usar esta función.</string>
+    <string name="toast_cart_load_error">Error al cargar el carrito</string>
+    <string name="toast_payment_success">¡Compra realizada con éxito!</string>
+    <string name="toast_payment_failed">Error al procesar el pago</string>
 
 
 </resources>

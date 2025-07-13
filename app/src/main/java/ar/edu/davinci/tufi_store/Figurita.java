@@ -5,6 +5,7 @@ public class Figurita {
     private String figuritaName;
     private String imageUrl;
     private double price; // Usamos double para el precio
+    private String documentId; // para el ID del documento de Firestore
 
     // Constructor vacío requerido por Firestore para la deserialización
     public Figurita() {
@@ -35,6 +36,10 @@ public class Figurita {
         return price;
     }
 
+    public String getDocumentId() {
+        return documentId;
+    }
+
     // Setters - Firestore los usa si no tienes un constructor con todos los argumentos
     public void setAlbumTitle(String albumTitle) {
         this.albumTitle = albumTitle;
@@ -51,4 +56,9 @@ public class Figurita {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public void setDocumentId(String documentId) {
+        this.documentId = documentId;
+    }
+
 }

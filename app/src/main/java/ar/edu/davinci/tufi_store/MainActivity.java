@@ -38,12 +38,19 @@ import com.android.volley.toolbox.Volley;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException; //Para el error de excepcion de firestore
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
 
     //Referencia al botón del footer Tienda
     private LinearLayout bottomCategories;
+
+    // Referencia al botón del footer Home
+    private LinearLayout bottomHome;
+
+    // Referencia al botón del footer Carrito
+    private LinearLayout bottomCart;
+
+    // Referencia al botón del footer Perfil de Usuarios
+    private LinearLayout bottomUsers;
 
     //Se instancia el firebase authenticator
     private FirebaseAuth mAuth;
@@ -138,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 linearLayoutPrincipal.addView(tituloUltimosAgregados, indexCardQuienes + 1);
 
 
+
         // Obtener referencia al LinearLayout del botón de Tienda
         bottomCategories = findViewById(R.id.bottom_categories);
 
@@ -150,7 +167,30 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-                
+
+        // Obtener referencia al LinearLayout del botón de Inicio en el Bottom Navigation
+        bottomHome = findViewById(R.id.bottom_home);
+
+        // Configurar listener para el botón de Inicio
+        bottomHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Ya estás en Inicio", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Obtener referencia al LinearLayout del botón de Tienda en el Bottom Navigation
+        bottomCategories = findViewById(R.id.bottom_categories);
+
+        // Configurar listener para el botón de Tienda
+        bottomCategories.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StoreActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
+            }
+        });
 
         // Obtener referencia al LinearLayout del botón de Sucursales en el Bottom Navigation
         bottomLocations = findViewById(R.id.bottom_locations);
@@ -160,6 +200,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LocationsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Obtener referencia al LinearLayout del botón de Carrito en el Bottom Navigation
+        bottomCart = findViewById(R.id.bottom_store);
+
+        // Configurar listener para el botón de Carrito
+        bottomCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CartActivity.class);
                 startActivity(intent);
             }
         });
@@ -234,7 +286,10 @@ public class MainActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 if (figuritaCount >= 2) break; // Asegura que no se muestren más de 2
 
-                                Figurita figurita = document.toObject(Figurita.class);
+                                //Para obtener el document ID de la figurita
+
+                                final Figurita figurita = document.toObject(Figurita.class);
+                                final String figuritaId = document.getId(); // Obtener el ID del documento
 
                                 if (figuritaCount % 2 == 0) { // Si es una posición par (0, 2, 4...), crea una nueva fila
                                     currentRow = new LinearLayout(MainActivity.this);
@@ -355,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
                                 comprarButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        Toast.makeText(MainActivity.this, getString(R.string.toast_added_to_cart, figurita.getFiguritaName()), Toast.LENGTH_SHORT).show();
+                                        addFiguritaToCart(figuritaId, figurita.getAlbumTitle(), figurita.getFiguritaName(), figurita.getImageUrl(), figurita.getPrice());
                                     }
                                 });
 
@@ -395,6 +450,69 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    // Metodo para agregar productos al carrito utilizando firestore
+
+    private void addFiguritaToCart(final String figuritaId, final String albumTitle, final String figuritaName, final String imageUrl, final double price) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, "Debes iniciar sesión para agregar ítems al carrito.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        final DocumentReference cartRef = db.collection("carritos").document(user.getUid());
+
+        db.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot snapshot = transaction.get(cartRef);
+
+                List<Map<String, Object>> currentCartItems;
+                if (snapshot.exists() && snapshot.contains("items")) {
+                    currentCartItems = (List<Map<String, Object>>) snapshot.get("items");
+                    if (currentCartItems == null) {
+                        currentCartItems = new ArrayList<>();
+                    }
+                } else {
+                    currentCartItems = new ArrayList<>();
+                }
+
+                List<Map<String, Object>> newCartItems = new ArrayList<>(currentCartItems);
+
+                boolean found = false;
+                for (Map<String, Object> item : newCartItems) {
+                    if (item.get("figuritaId") != null && item.get("figuritaId").equals(figuritaId)) {
+                        long quantity = (long) item.get("quantity");
+                        item.put("quantity", quantity + 1);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    Map<String, Object> newItem = new HashMap<>();
+                    newItem.put("figuritaId", figuritaId);
+                    newItem.put("albumTitle", albumTitle);
+                    newItem.put("figuritaName", figuritaName);
+                    newItem.put("imageUrl", imageUrl);
+                    newItem.put("price", price);
+                    newItem.put("quantity", 1);
+                    newCartItems.add(newItem);
+                }
+
+                transaction.set(cartRef, new HashMap<String, Object>() {{
+                    put("items", newCartItems);
+                }});
+                return null;
+            }
+        }).addOnSuccessListener(aVoid -> {
+            Toast.makeText(MainActivity.this, getString(R.string.toast_added_to_cart, figuritaName), Toast.LENGTH_SHORT).show();
+            Log.d("MainActivity", "Figurita " + figuritaName + " agregada/actualizada en el carrito.");
+        }).addOnFailureListener(e -> {
+            Toast.makeText(MainActivity.this, "Error al agregar al carrito: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("MainActivity", "Error al agregar figurita al carrito: ", e);
+        });
     }
 
 }

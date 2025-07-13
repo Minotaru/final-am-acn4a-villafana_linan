@@ -32,14 +32,21 @@ import com.android.volley.VolleyError;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.Transaction;
 
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class StoreActivity extends AppCompatActivity {
@@ -49,7 +56,7 @@ public class StoreActivity extends AppCompatActivity {
     private LinearLayout bottomHome;
     private LinearLayout bottomCategories;
     private LinearLayout bottomLocations;
-    private LinearLayout bottomStore;
+    private LinearLayout bottomCart;
     private LinearLayout bottomUsers;
 
     //Para Firebase FireStore
@@ -134,7 +141,7 @@ public class StoreActivity extends AppCompatActivity {
         bottomHome = findViewById(R.id.bottom_home);
         bottomCategories = findViewById(R.id.bottom_categories);
         bottomLocations = findViewById(R.id.bottom_locations);
-        bottomStore = findViewById(R.id.bottom_store);
+        bottomCart = findViewById(R.id.bottom_store);
         bottomUsers = findViewById(R.id.bottom_users);
 
         // Listener para Home
@@ -171,11 +178,11 @@ public class StoreActivity extends AppCompatActivity {
         });
 
         // Listener para Store (Carrito)
-        bottomStore.setOnClickListener(new View.OnClickListener() {
+        bottomCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StoreActivity.this, "Botón de Carrito clicado en Tienda", Toast.LENGTH_SHORT).show();
-
+                Intent intent = new Intent(StoreActivity.this, CartActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -235,6 +242,7 @@ public class StoreActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 // Mapea los datos del documento a un objeto Figurita
                                 Figurita figurita = document.toObject(Figurita.class);
+                                figurita.setDocumentId(document.getId()); // Asignar el ID del documento a la figurita
                                 allFiguritas.add(figurita);
                                 Log.d("StoreActivity", "Figurita cargada: " + figurita.getFiguritaName()); // Log para depuración
                             }
@@ -282,7 +290,7 @@ public class StoreActivity extends AppCompatActivity {
         // Lógica para organizar las cards en pares (dos por fila)
         LinearLayout currentRow = null;
         for (int i = 0; i < figuritasToDisplay.size(); i++) {
-            Figurita figurita = figuritasToDisplay.get(i);
+            final Figurita figurita = figuritasToDisplay.get(i);
 
             if (i % 2 == 0) { // Si es una posición par (0, 2, 4...), crea una nueva fila
                 currentRow = new LinearLayout(this);
@@ -407,9 +415,7 @@ public class StoreActivity extends AppCompatActivity {
             comprarButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
-                    Toast.makeText(StoreActivity.this, getString(R.string.toast_added_to_cart, figurita.getFiguritaName()), Toast.LENGTH_SHORT).show();
-
+                    addFiguritaToCart(figurita.getDocumentId(), figurita.getAlbumTitle(), figurita.getFiguritaName(), figurita.getImageUrl(), figurita.getPrice());
                 }
             });
 
@@ -428,6 +434,69 @@ public class StoreActivity extends AppCompatActivity {
                 currentRow.addView(cardView);
             }
         }
+    }
+
+    // Metodo para agregar figuritas al carrito usando firestore
+
+    private void addFiguritaToCart(final String figuritaId, final String albumTitle, final String figuritaName, final String imageUrl, final double price) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, "Debes iniciar sesión para agregar ítems al carrito.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        final DocumentReference cartRef = db.collection("carritos").document(user.getUid());
+
+        db.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot snapshot = transaction.get(cartRef);
+
+                List<Map<String, Object>> currentCartItems;
+                if (snapshot.exists() && snapshot.contains("items")) {
+                    currentCartItems = (List<Map<String, Object>>) snapshot.get("items");
+                    if (currentCartItems == null) {
+                        currentCartItems = new ArrayList<>();
+                    }
+                } else {
+                    currentCartItems = new ArrayList<>();
+                }
+
+                List<Map<String, Object>> newCartItems = new ArrayList<>(currentCartItems);
+
+                boolean found = false;
+                for (Map<String, Object> item : newCartItems) {
+                    if (item.get("figuritaId") != null && item.get("figuritaId").equals(figuritaId)) {
+                        long quantity = (long) item.get("quantity");
+                        item.put("quantity", quantity + 1);
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    Map<String, Object> newItem = new HashMap<>();
+                    newItem.put("figuritaId", figuritaId);
+                    newItem.put("albumTitle", albumTitle);
+                    newItem.put("figuritaName", figuritaName);
+                    newItem.put("imageUrl", imageUrl);
+                    newItem.put("price", price);
+                    newItem.put("quantity", 1);
+                    newCartItems.add(newItem);
+                }
+
+                transaction.set(cartRef, new HashMap<String, Object>() {{
+                    put("items", newCartItems);
+                }});
+                return null;
+            }
+        }).addOnSuccessListener(aVoid -> {
+            Toast.makeText(StoreActivity.this, getString(R.string.toast_added_to_cart, figuritaName), Toast.LENGTH_SHORT).show();
+            Log.d("StoreActivity", "Figurita " + figuritaName + " agregada/actualizada en el carrito.");
+        }).addOnFailureListener(e -> {
+            Toast.makeText(StoreActivity.this, "Error al agregar al carrito: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("StoreActivity", "Error al agregar figurita al carrito: ", e);
+        });
     }
 
 }
