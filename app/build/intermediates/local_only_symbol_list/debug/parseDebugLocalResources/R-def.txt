@@ -9,6 +9,8 @@ color holo_blue_light
 color text_black
 color text_maincard
 color top_bar_background
+dimen figurita_image_height
+dimen figurita_image_width
 dimen location_image_height
 dimen location_image_width
 drawable ic_cart
@@ -17,6 +19,7 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_location
 drawable ic_menu
+drawable ic_search
 drawable ic_store
 drawable ic_user
 drawable ic_users
@@ -39,6 +42,7 @@ id figurita2_comprar
 id figurita2_image
 id figurita2_name
 id figurita2_title
+id figuritas_container
 id forgot_password_text
 id linearultagreg
 id loading_indicator
@@ -51,6 +55,8 @@ id main_tufi
 id menu_button
 id password_edit_text
 id register_text
+id search_edit_text
+id store_loading_indicator
 id store_screen_title
 id top_bar
 id user_button
@@ -90,6 +96,7 @@ string locations_screen_title
 string logo_banner_description
 string menu_button_description
 string menu_logout
+string no_figuritas_found
 string placeholder_email
 string placeholder_password
 string profile_icon_description
@@ -97,12 +104,15 @@ string profile_user_label
 string project_id
 string quienes_somos_card_text
 string quienes_somos_card_title
+string search_hint_album
 string store_content_placeholder
 string store_icon_description
 string store_label
 string store_screen_title
 string text_forgot_password
 string text_register
+string toast_added_to_cart
+string toast_figuritas_load_error
 string toast_json_parse_error
 string toast_locations_load_error
 string toast_login_failed

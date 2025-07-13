@@ -2,4 +2,6 @@
 <resources>
     <dimen name="location_image_width">150dp</dimen>
     <dimen name="location_image_height">150dp</dimen>
+    <dimen name="figurita_image_width">100dp</dimen>
+    <dimen name="figurita_image_height">100dp</dimen>
 </resources>

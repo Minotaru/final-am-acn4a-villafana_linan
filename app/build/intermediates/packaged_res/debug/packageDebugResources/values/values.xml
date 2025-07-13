@@ -9,6 +9,8 @@
     <color name="text_black">#FF000000</color>
     <color name="text_maincard">#A9A9A9</color>
     <color name="top_bar_background">#808def</color>
+    <dimen name="figurita_image_height">100dp</dimen>
+    <dimen name="figurita_image_width">100dp</dimen>
     <dimen name="location_image_height">150dp</dimen>
     <dimen name="location_image_width">150dp</dimen>
     <string name="app_name">TuFi_Store</string>
@@ -37,6 +39,7 @@
     <string name="logo_banner_description">Logo de TuFi Store</string>
     <string name="menu_button_description">Botón de menú</string>
     <string name="menu_logout">Cerrar Sesión</string>
+    <string name="no_figuritas_found">No se encontraron figuritas que coincidan con la búsqueda.</string>
     <string name="placeholder_email">Email</string>
     <string name="placeholder_password">Password</string>
     <string name="profile_icon_description">Icono de perfil de usuario</string>
@@ -44,12 +47,15 @@
     <string name="project_id" translatable="false">tufistore</string>
     <string name="quienes_somos_card_text">En Tufi Store, entendemos la emoción y la dedicación que conlleva la tarea de completar un álbum de figuritas. Somos más que una tienda online, somos un punto de encuentro para coleccionistas apasionados, expertos y novatos, que buscan esa pieza especial para dar vida a sus colecciones.\nNuestra amplia selección de figuritas sueltas abarca una variedad de temáticas y épocas, asegurando que cada coleccionista encuentre exactamente lo que busca. Desde las clásicas hasta las más raras, cada figurita en nuestro catálogo es una oportunidad para acercarte a completar tu álbum deseado.\nCelebramos cada historia detrás de las colecciones y fomentamos la conexión entre aficionados de todas partes del mundo.\nEn Tufi Store, cada clic te acerca a completar tu sueño. Explora nuestra colección hoy y ¡descubre el mundo fascinante de las figuritas!</string>
     <string name="quienes_somos_card_title">¿Quiénes somos?</string>
+    <string name="search_hint_album">Buscar por título de álbum...</string>
     <string name="store_content_placeholder">Aquí se mostrarán las figuritas de la tienda.</string>
     <string name="store_icon_description">Icono de tienda</string>
     <string name="store_label">Tienda</string>
     <string name="store_screen_title">Tienda</string>
     <string name="text_forgot_password">Olvidó la contraseña?</string>
     <string name="text_register">Registrarse</string>
+    <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
+    <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
     <string name="toast_json_parse_error">Error al procesar datos de sucursales</string>
     <string name="toast_locations_load_error">Error al cargar sucursales</string>
     <string name="toast_login_failed">Email o contraseña incorrectos</string>

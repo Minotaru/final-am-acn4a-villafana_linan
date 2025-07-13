@@ -2292,6 +2292,8 @@ dimen disabled_alpha_material_light
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
+dimen figurita_image_height
+dimen figurita_image_width
 dimen highlight_alpha_material_colored
 dimen highlight_alpha_material_dark
 dimen highlight_alpha_material_light
@@ -3091,6 +3093,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_other_sign_in
 drawable ic_passkey
 drawable ic_password
+drawable ic_search
 drawable ic_search_black_24
 drawable ic_store
 drawable ic_user
@@ -3385,6 +3388,7 @@ id figurita2_comprar
 id figurita2_image
 id figurita2_name
 id figurita2_title
+id figuritas_container
 id fill
 id fill_horizontal
 id fill_vertical
@@ -3598,6 +3602,7 @@ id search_bar
 id search_button
 id search_close_btn
 id search_edit_frame
+id search_edit_text
 id search_go_btn
 id search_mag_icon
 id search_plate
@@ -3640,6 +3645,7 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id stop
+id store_loading_indicator
 id store_screen_title
 id stretch
 id submenuarrow
@@ -4134,6 +4140,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string no_figuritas_found
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -4146,6 +4153,7 @@ string profile_user_label
 string project_id
 string quienes_somos_card_text
 string quienes_somos_card_title
+string search_hint_album
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description
@@ -4159,6 +4167,8 @@ string store_label
 string store_screen_title
 string text_forgot_password
 string text_register
+string toast_added_to_cart
+string toast_figuritas_load_error
 string toast_json_parse_error
 string toast_locations_load_error
 string toast_login_failed

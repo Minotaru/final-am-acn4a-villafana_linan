@@ -43,5 +43,9 @@
     <string name="toast_logout_success">Sesión cerrada exitosamente</string>
     <string name="store_screen_title">Tienda</string>
     <string name="store_content_placeholder">Aquí se mostrarán las figuritas de la tienda.</string>
+    <string name="search_hint_album">Buscar por título de álbum...</string>
+    <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
+    <string name="no_figuritas_found">No se encontraron figuritas que coincidan con la búsqueda.</string>
+    <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
 
 </resources>

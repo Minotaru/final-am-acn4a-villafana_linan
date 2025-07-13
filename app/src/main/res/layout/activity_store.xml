@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".StoreActivity">
 
-    <!-- Top Bar -->
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/top_bar"
         android:layout_width="0dp"
@@ -60,10 +58,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- FIN Top Bar -->
-
-    <!-- Título de la pantalla de la tienda -->
-
     <TextView
         android:id="@+id/store_screen_title"
         android:layout_width="wrap_content"
@@ -77,42 +71,52 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_bar" />
 
-    <!-- Contenido de la pantalla de la tienda (Por el momento vacío/placeholder) -->
+    <EditText
+        android:id="@+id/search_edit_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        android:hint="@string/search_hint_album"
+        android:inputType="textCapWords"
+        android:padding="12dp"
+        android:background="@drawable/rounded_edittext_background"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/darker_gray"
+        android:drawableStart="@drawable/ic_search"
+        android:drawablePadding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/store_screen_title" />
 
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fillViewport="true"
+        android:layout_marginTop="16dp"
+        android:paddingBottom="16dp"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/store_screen_title">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="16dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/store_content_placeholder"
-                android:textSize="20sp"
-                android:textColor="@color/text_black"
-                android:gravity="center"
-                android:layout_marginTop="50dp"/>
-
-            <!-- Acá se agregaran las cards de las figuritas tal como está en el .docs -->
-
-            </LinearLayout>
+        app:layout_constraintTop_toBottomOf="@id/search_edit_text"> <LinearLayout
+        android:id="@+id/figuritas_container" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="16dp" />
 
     </ScrollView>
 
-
-    <!-- Inicio Bottom Bar -->
-
+    <ProgressBar
+        android:id="@+id/store_loading_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <LinearLayout
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
@@ -245,8 +249,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
-    <!-- Fin Bottom nav -->
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
