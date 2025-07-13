@@ -3379,14 +3379,6 @@ int id exitUntilCollapsed 0x7f0800c9
 int id expand_activities_button 0x7f0800ca
 int id expanded_menu 0x7f0800cb
 int id fade 0x7f0800cc
-int id figurita1_comprar 0x7f0800cd
-int id figurita1_image 0x7f0800ce
-int id figurita1_name 0x7f0800cf
-int id figurita1_title 0x7f0800d0
-int id figurita2_comprar 0x7f0800d1
-int id figurita2_image 0x7f0800d2
-int id figurita2_name 0x7f0800d3
-int id figurita2_title 0x7f0800d4
 int id figuritas_container 0x7f0800d5
 int id fill 0x7f0800d6
 int id fill_horizontal 0x7f0800d7
@@ -3447,7 +3439,6 @@ int id light 0x7f08010d
 int id line1 0x7f08010e
 int id line3 0x7f08010f
 int id linear 0x7f080110
-int id linearultagreg 0x7f080111
 int id listMode 0x7f080112
 int id list_item 0x7f080113
 int id loading_indicator 0x7f080114
@@ -3457,6 +3448,7 @@ int id login_button 0x7f080117
 int id logo_banner 0x7f080118
 int id logo_tufi_store 0x7f080119
 int id m3_side_sheet 0x7f08011a
+int id main_loading_indicator 0x7f080229
 int id main_tufi 0x7f08011b
 int id marquee 0x7f08011c
 int id masked 0x7f08011d
@@ -3700,6 +3692,7 @@ int id transition_position 0x7f08020a
 int id transition_scene_layoutid_cache 0x7f08020b
 int id transition_transform 0x7f08020c
 int id triangle 0x7f08020d
+int id ultimos_agregados_container 0x7f08022a
 int id unchecked 0x7f08020e
 int id uniform 0x7f08020f
 int id unlabeled 0x7f080210
@@ -4140,6 +4133,7 @@ int string mtrl_switch_track_path 0x7f1100c9
 int string mtrl_timepicker_cancel 0x7f1100ca
 int string mtrl_timepicker_confirm 0x7f1100cb
 int string no_figuritas_found 0x7f1100cc
+int string no_figuritas_found_main 0x7f1100f4
 int string password_toggle_content_description 0x7f1100cd
 int string path_password_eye 0x7f1100ce
 int string path_password_eye_mask_strike_through 0x7f1100cf
@@ -4168,6 +4162,7 @@ int string text_forgot_password 0x7f1100e5
 int string text_register 0x7f1100e6
 int string toast_added_to_cart 0x7f1100e7
 int string toast_figuritas_load_error 0x7f1100e8
+int string toast_figuritas_load_error_main 0x7f1100f5
 int string toast_json_parse_error 0x7f1100e9
 int string toast_locations_load_error 0x7f1100ea
 int string toast_login_failed 0x7f1100eb

@@ -40,6 +40,7 @@
     <string name="menu_button_description">Botón de menú</string>
     <string name="menu_logout">Cerrar Sesión</string>
     <string name="no_figuritas_found">No se encontraron figuritas que coincidan con la búsqueda.</string>
+    <string name="no_figuritas_found_main">No se encontraron figuritas destacadas.</string>
     <string name="placeholder_email">Email</string>
     <string name="placeholder_password">Password</string>
     <string name="profile_icon_description">Icono de perfil de usuario</string>
@@ -56,6 +57,7 @@
     <string name="text_register">Registrarse</string>
     <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
     <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
+    <string name="toast_figuritas_load_error_main">Error al cargar figuritas destacadas</string>
     <string name="toast_json_parse_error">Error al procesar datos de sucursales</string>
     <string name="toast_locations_load_error">Error al cargar sucursales</string>
     <string name="toast_login_failed">Email o contraseña incorrectos</string>

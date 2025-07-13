@@ -47,5 +47,8 @@
     <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
     <string name="no_figuritas_found">No se encontraron figuritas que coincidan con la búsqueda.</string>
     <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
+    <string name="no_figuritas_found_main">No se encontraron figuritas destacadas.</string>
+    <string name="toast_figuritas_load_error_main">Error al cargar figuritas destacadas</string>
+
 
 </resources>
