@@ -9,8 +9,8 @@
 9        android:targetSdkVersion="35" />
 10
 11    <uses-permission android:name="android.permission.INTERNET" />
-11-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:5:5-66
-11-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:5:22-64
+11-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:5:5-66
+11-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:5:22-64
 12    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 12-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\D\.gradle\caches\8.11.1\transforms\7168dfd130ac478cc284b897ecad71dc\transformed\firebase-auth-23.2.1\AndroidManifest.xml:26:5-79
 12-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\D\.gradle\caches\8.11.1\transforms\7168dfd130ac478cc284b897ecad71dc\transformed\firebase-auth-23.2.1\AndroidManifest.xml:26:22-76
@@ -30,65 +30,65 @@
 19-->[androidx.core:core:1.13.0] C:\Users\D\.gradle\caches\8.11.1\transforms\a911abbcccb555278ba91cc696378daf\transformed\core-1.13.0\AndroidManifest.xml:26:22-94
 20
 21    <application
-21-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:7:5-42:19
+21-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:7:5-42:19
 22        android:allowBackup="true"
-22-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:8:9-35
+22-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:8:9-35
 23        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 23-->[androidx.core:core:1.13.0] C:\Users\D\.gradle\caches\8.11.1\transforms\a911abbcccb555278ba91cc696378daf\transformed\core-1.13.0\AndroidManifest.xml:28:18-86
 24        android:dataExtractionRules="@xml/data_extraction_rules"
-24-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:9:9-65
+24-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:9:9-65
 25        android:debuggable="true"
 26        android:extractNativeLibs="false"
 27        android:fullBackupContent="@xml/backup_rules"
-27-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:10:9-54
+27-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:10:9-54
 28        android:icon="@mipmap/ic_launcher"
-28-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:11:9-43
+28-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:11:9-43
 29        android:label="@string/app_name"
-29-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:12:9-41
+29-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:12:9-41
 30        android:roundIcon="@mipmap/ic_launcher_round"
-30-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:13:9-54
+30-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:13:9-54
 31        android:supportsRtl="true"
-31-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:14:9-35
+31-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:14:9-35
 32        android:testOnly="true"
 33        android:theme="@style/Theme.TuFi_Store" >
-33-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:15:9-48
+33-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:15:9-48
 34        <activity
-34-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:18:9-25:20
+34-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:18:9-25:20
 35            android:name="ar.edu.davinci.tufi_store.LoginActivity"
-35-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:19:13-42
+35-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:19:13-42
 36            android:exported="true" >
-36-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:20:13-36
+36-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:20:13-36
 37            <intent-filter>
-37-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:21:13-24:29
+37-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:21:13-24:29
 38                <action android:name="android.intent.action.MAIN" />
-38-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:22:17-69
-38-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:22:25-66
+38-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:22:17-69
+38-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:22:25-66
 39
 40                <category android:name="android.intent.category.LAUNCHER" />
-40-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:23:17-77
-40-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:23:27-74
+40-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:23:17-77
+40-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:23:27-74
 41            </intent-filter>
 42        </activity>
 43        <activity
-43-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:27:9-30:20
+43-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:27:9-30:20
 44            android:name="ar.edu.davinci.tufi_store.MainActivity"
-44-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:28:13-41
+44-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:28:13-41
 45            android:exported="false" >
-45-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:29:13-37
+45-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:29:13-37
 46        </activity>
 47        <activity
-47-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:32:9-35:20
+47-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:32:9-35:20
 48            android:name="ar.edu.davinci.tufi_store.LocationsActivity"
-48-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:33:13-46
+48-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:33:13-46
 49            android:exported="false" >
-49-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:34:13-37
+49-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:34:13-37
 50        </activity>
 51        <activity
-51-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:37:9-40:20
+51-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:37:9-40:20
 52            android:name="ar.edu.davinci.tufi_store.StoreActivity"
-52-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:38:13-42
+52-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:38:13-42
 53            android:exported="false" >
-53-->C:\tufiappmovil\parcial-1-am-acn4a-villafana_linan-villafana_linan\app\src\main\AndroidManifest.xml:39:13-37
+53-->C:\final-am-acn4a-villafana_linan\app\src\main\AndroidManifest.xml:39:13-37
 54        </activity>
 55        <activity
 55-->[com.google.firebase:firebase-auth:23.2.1] C:\Users\D\.gradle\caches\8.11.1\transforms\7168dfd130ac478cc284b897ecad71dc\transformed\firebase-auth-23.2.1\AndroidManifest.xml:29:9-46:20

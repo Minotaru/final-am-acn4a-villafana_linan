@@ -4,6 +4,25 @@
             "outputFile": "ar.edu.davinci.tufi_store.app-mergeDebugResources-39:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
+                    "source": "C:\\final-am-acn4a-villafana_linan\\app\\src\\main\\res\\values-night\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "102",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "322"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "168"
+                    }
+                },
+                {
                     "source": "C:\\Users\\D\\.gradle\\caches\\8.11.1\\transforms\\262799526671b07ddf429ffed652b3f2\\transformed\\appcompat-1.7.0\\res\\values-night-v8\\values-night-v8.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -35,25 +54,6 @@
                         "startOffsets": "805,880,991,1080,1181,1288,1395,1494,1601,1704,1831,1919,2043,2145,2247,2363,2465,2579,2707,2823,2945,3081,3201,3335,3455,3567,3782,3899,4023,4153,4275,4413,4547,4663",
                         "endColumns": "74,110,88,100,106,106,98,106,102,126,87,123,101,101,115,101,113,127,115,121,135,119,133,119,111,125,116,123,129,121,137,133,115,119",
                         "endOffsets": "875,986,1075,1176,1283,1390,1489,1596,1699,1826,1914,2038,2140,2242,2358,2460,2574,2702,2818,2940,3076,3196,3330,3450,3562,3688,3894,4018,4148,4270,4408,4542,4658,4778"
-                    }
-                },
-                {
-                    "source": "C:\\tufiappmovil\\parcial-1-am-acn4a-villafana_linan-villafana_linan\\app\\src\\main\\res\\values-night\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "102",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "322"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "5",
-                        "endColumns": "12",
-                        "endOffsets": "168"
                     }
                 }
             ]
