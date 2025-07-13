@@ -338,6 +338,8 @@ public class MainActivity extends AppCompatActivity {
                                         LinearLayout.LayoutParams.WRAP_CONTENT
                                 ));
                                 comprarButton.setText(getString(R.string.buttom_comprar_cat));
+                                comprarButton.setBackgroundResource(R.drawable.rounded_button_background);
+                                comprarButton.setTextColor(ContextCompat.getColor(MainActivity.this, R.color.app_name));
                                 comprarButton.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {

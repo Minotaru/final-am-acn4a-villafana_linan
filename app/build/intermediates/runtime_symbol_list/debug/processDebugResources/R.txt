@@ -3170,6 +3170,7 @@ int drawable notification_template_icon_bg 0x7f070100
 int drawable notification_template_icon_low_bg 0x7f070101
 int drawable notification_tile_bg 0x7f070102
 int drawable notify_panel_notification_icon_bg 0x7f070103
+int drawable rounded_button_background 0x7f070108
 int drawable rounded_edittext_background 0x7f070104
 int drawable test_level_drawable 0x7f070105
 int drawable tooltip_frame_dark 0x7f070106

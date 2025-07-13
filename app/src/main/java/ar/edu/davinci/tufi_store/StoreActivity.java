@@ -390,6 +390,8 @@ public class StoreActivity extends AppCompatActivity {
                     LinearLayout.LayoutParams.WRAP_CONTENT
             ));
             comprarButton.setText(getString(R.string.buttom_comprar_cat)); // Reutiliza el string "Comprar"
+            comprarButton.setBackgroundResource(R.drawable.rounded_button_background);
+            comprarButton.setTextColor(ContextCompat.getColor(this, R.color.app_name));
             comprarButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

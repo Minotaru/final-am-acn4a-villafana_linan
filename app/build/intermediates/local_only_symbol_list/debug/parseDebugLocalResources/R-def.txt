@@ -23,6 +23,7 @@ drawable ic_search
 drawable ic_store
 drawable ic_user
 drawable ic_users
+drawable rounded_button_background
 drawable rounded_edittext_background
 id action_logout
 id app_name
