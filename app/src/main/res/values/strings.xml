@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">TuFi_Store</string>
+    <string name="home_label">Inicio</string>
+    <string name="store_label">Tienda</string>
+    <string name="locations_label">Sucursales</string>
+    <string name="cart_label">Carrito</string>
+    <string name="profile_user_label">Perfil</string>
+    <string name="quienes_somos_card_title">¿Quiénes somos?</string>
+    <string name="quienes_somos_card_text">En Tufi Store, entendemos la emoción y la dedicación que conlleva la tarea de completar un álbum de figuritas. Somos más que una tienda online, somos un punto de encuentro para coleccionistas apasionados, expertos y novatos, que buscan esa pieza especial para dar vida a sus colecciones.\nNuestra amplia selección de figuritas sueltas abarca una variedad de temáticas y épocas, asegurando que cada coleccionista encuentre exactamente lo que busca. Desde las clásicas hasta las más raras, cada figurita en nuestro catálogo es una oportunidad para acercarte a completar tu álbum deseado.\nCelebramos cada historia detrás de las colecciones y fomentamos la conexión entre aficionados de todas partes del mundo.\nEn Tufi Store, cada clic te acerca a completar tu sueño. Explora nuestra colección hoy y ¡descubre el mundo fascinante de las figuritas!</string>
+    <string name="cat_fifawc22_title">FIFA World Cup 2022</string>
+    <string name="fifawc22_figu_paredes">Leandro Paredes</string>
+    <string name="buttom_comprar_cat">Comprar</string>
+    <string name="fifawc22_figu_romero">Cristian Romero</string>
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="text_register">Registrarse</string>
+    <string name="text_forgot_password">Olvidó la contraseña?</string>
+    <string name="error_empty_email">El email no puede estar vacío</string>
+    <string name="error_empty_password">La contraseña no puede estar vacía</string>
+    <string name="toast_login_success">¡Inicio de sesión exitoso!</string>
+    <string name="toast_login_failed">Email o contraseña incorrectos</string>
+    <string name="logo_banner_description">Logo de TuFi Store</string>
+    <string name="menu_logout">Cerrar Sesión</string>
+    <string name="error_password_length">La contraseña debe tener al menos 6 caracteres</string>
+    <string name="toast_registration_success">¡Registro exitoso! Ya puedes iniciar sesión.</string>
+    <string name="toast_registration_failed">Error en el registro</string>
+    <string name="error_empty_email_reset">Ingrese un email para restablecer la contraseña</string>
+    <string name="toast_reset_password_success">Se ha enviado un correo de recuperación a su email. Revise su bandeja de entrada.</string>
+    <string name="toast_reset_password_failed">Error al enviar el correo de recuperación</string>
+    <string name="locations_screen_title">Sucursales</string>
+    <string name="toast_locations_load_error">Error al cargar sucursales</string>
+    <string name="toast_no_locations_found">No se encontraron sucursales.</string>
+    <string name="toast_json_parse_error">Error al procesar datos de sucursales</string>
+    <string name="location_image_description">Imagen de la sucursal %1$s</string>
+    <string name="menu_button_description">Botón de menú</string>
+    <string name="user_button_description">Botón de usuario</string>
+    <string name="home_icon_description">Icono de inicio</string>
+    <string name="store_icon_description">Icono de tienda</string>
+    <string name="locations_icon_description">Icono de sucursales</string>
+    <string name="cart_icon_description">Icono de carrito</string>
+    <string name="profile_icon_description">Icono de perfil de usuario</string>
+    <string name="toast_logout_success">Sesión cerrada exitosamente</string>
+    <string name="store_screen_title">Tienda</string>
+    <string name="store_content_placeholder">Aquí se mostrarán las figuritas de la tienda.</string>
+
+</resources>

@@ -1,0 +1,20 @@
+[
+  {
+    "imageUrl": "https://raw.githubusercontent.com/DeniseDesu/parcial-1-am-acn4a-villafana_linan-villafana_linan/refs/heads/main/informe/Repositorio%20-%20Volley/Corrientes1234.PNG",
+    "address": "Av. Corrientes 1234, CABA",
+    "phone": "011-4567-8901",
+    "hours": "Lunes a Viernes: 9-18hs, Sábados: 10-14hs"
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/DeniseDesu/parcial-1-am-acn4a-villafana_linan-villafana_linan/refs/heads/main/informe/Repositorio%20-%20Volley/Libertador567.PNG",
+    "address": "Libertador 567, San Isidro",
+    "phone": "011-9876-5432",
+    "hours": "Lunes a Sábados: 9:30-19hs"
+  },
+  {
+    "imageUrl": "https://raw.githubusercontent.com/DeniseDesu/parcial-1-am-acn4a-villafana_linan-villafana_linan/refs/heads/main/informe/Repositorio%20-%20Volley/Yrigoyen345.PNG",
+    "address": "Hipólito Yrigoyen 345, Lanús",
+    "phone": "011-1234-5678",
+    "hours": "Lunes a Viernes: 10-18hs"
+  }
+]

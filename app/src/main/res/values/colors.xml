@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="text_black">#FF000000</color>
+    <color name="app_name">#FFFFFFFF</color>
+    <color name="holo_blue_light">#FFADD8E6</color>
+    <color name="top_bar_background">#808def</color>
+    <color name="text_maincard">#A9A9A9</color>
+    <color name="bottom_navigation_background">#FFFFFFFF</color>
+    <color name="edittext_background_light_grey">#F0F0F0</color>
+    <color name="edittext_stroke_grey">#CCCCCC</color>
+    <color name="edittext_hint_dark_grey">@android:color/darker_gray</color>
+</resources>
+
