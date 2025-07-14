@@ -59,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
     //Referencia al ícono de usuario del navbar
     private ImageView userButton;
 
+    // Referencia al botón de menú de la Top Bar
+    private ImageView menuButton;
+
     //Referencia al boton del footer Sucursarles
     private LinearLayout bottomLocations;
 
@@ -154,6 +157,14 @@ public class MainActivity extends AppCompatActivity {
         // 5. Insertar el TextView justo después de la CardView "Quiénes somos?"
                 linearLayoutPrincipal.addView(tituloUltimosAgregados, indexCardQuienes + 1);
 
+
+        menuButton = findViewById(R.id.menu_button);
+        menuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Botón de menú clicado en Inicio", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
         // Obtener referencia al LinearLayout del botón de Tienda

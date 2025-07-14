@@ -140,11 +140,20 @@ public class LocationsActivity extends AppCompatActivity {
            }
         });
 
+        //Listener para bottom nav: Sucursales
+        bottomLocations.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LocationsActivity.this, "Ya estás en Sucursales", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         // Listener para bottom nav: Carrito
         bottomStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LocationsActivity.this, "Botón de Carrito clicado en Sucursales", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LocationsActivity.this, CartActivity.class);
+                startActivity(intent);
             }
         });
 
