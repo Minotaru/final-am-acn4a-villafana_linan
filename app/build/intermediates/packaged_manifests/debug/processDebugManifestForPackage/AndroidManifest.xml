@@ -65,6 +65,10 @@
             android:exported="false" >
         </activity>
         <activity
+            android:name="ar.edu.davinci.tufi_store.OrderHistoryActivity"
+            android:exported="false" >
+        </activity>
+        <activity
             android:name="com.google.firebase.auth.internal.GenericIdpActivity"
             android:excludeFromRecents="true"
             android:exported="true"

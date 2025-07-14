@@ -39,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity {
     private EditText profileAddressEdit;
     private EditText profilePhoneEdit;
     private Button saveProfileButton;
+    private Button viewOrderHistoryButton;
     private ProgressBar profileLoadingIndicator;
 
     private LinearLayout bottomHomeProfile;
@@ -75,6 +76,7 @@ public class ProfileActivity extends AppCompatActivity {
         profileAddressEdit = findViewById(R.id.profile_address_edit);
         profilePhoneEdit = findViewById(R.id.profile_phone_edit);
         saveProfileButton = findViewById(R.id.save_profile_button);
+        viewOrderHistoryButton = findViewById(R.id.view_order_history_button);
         profileLoadingIndicator = findViewById(R.id.profile_loading_indicator);
 
         // Inicializar y configurar listeners para las barras
@@ -151,6 +153,15 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 saveProfileData();
+            }
+        });
+
+        // Configurar Listener para el botón de Historial de Compras
+        viewOrderHistoryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfileActivity.this, OrderHistoryActivity.class);
+                startActivity(intent);
             }
         });
 

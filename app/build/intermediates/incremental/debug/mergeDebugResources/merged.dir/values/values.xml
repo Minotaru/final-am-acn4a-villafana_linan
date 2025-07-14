@@ -2199,6 +2199,14 @@
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
     <string name="no_figuritas_found">No se encontraron figuritas que coincidan con la búsqueda.</string>
     <string name="no_figuritas_found_main">No se encontraron figuritas destacadas.</string>
+    <string name="no_orders_found">No hay compras registradas.</string>
+    <string name="order_date_format">Fecha: %s</string>
+    <string name="order_date_unavailable">Fecha: N/D</string>
+    <string name="order_history_title">Historial de Compras</string>
+    <string name="order_id_format">ID de Orden: %s</string>
+    <string name="order_item_format">- %d x %s ($%.2f)</string>
+    <string name="order_no_items">No hay ítems en esta orden.</string>
+    <string name="order_total_format">Total de la Orden: $%.2f</string>
     <string name="password_toggle_content_description">Show password</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -2243,6 +2251,7 @@
     <string name="toast_cart_load_error">Error al cargar el carrito</string>
     <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
     <string name="toast_figuritas_load_error_main">Error al cargar figuritas destacadas</string>
+    <string name="toast_history_load_error">Error al cargar el historial de compras</string>
     <string name="toast_image_load_error">Error al cargar imagen</string>
     <string name="toast_json_parse_error">Error al procesar datos de sucursales</string>
     <string name="toast_locations_load_error">Error al cargar sucursales</string>
@@ -2253,6 +2262,7 @@
     <string name="toast_no_figurita_data">No se pudo cargar la información de la figurita.</string>
     <string name="toast_no_locations_found">No se encontraron sucursales.</string>
     <string name="toast_payment_failed">Error al procesar el pago</string>
+    <string name="toast_payment_failed_save_history">Error al guardar historial de compra</string>
     <string name="toast_payment_success">¡Compra realizada con éxito!</string>
     <string name="toast_profile_load_error">Error al cargar el perfil</string>
     <string name="toast_profile_not_found">Perfil no encontrado. Puede que sea nuevo.</string>
@@ -2265,6 +2275,7 @@
     <string name="toast_reset_password_failed">Error al enviar el correo de recuperación</string>
     <string name="toast_reset_password_success">Se ha enviado un correo de recuperación a su email. Revise su bandeja de entrada.</string>
     <string name="user_button_description">Botón de usuario</string>
+    <string name="view_order_history_button">Ver Historial de Compras</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

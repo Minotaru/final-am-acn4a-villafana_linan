@@ -78,7 +78,17 @@
     <string name="toast_profile_not_found">Perfil no encontrado. Puede que sea nuevo.</string>
     <string name="toast_registration_success_profile">¡Registro exitoso! Perfil creado. Inicie sesión.</string>
     <string name="toast_registration_success_profile_error">Registro exitoso, pero falló al crear el perfil inicial:</string>
-
+    <string name="order_history_title">Historial de Compras</string>
+    <string name="toast_history_load_error">Error al cargar el historial de compras</string>
+    <string name="no_orders_found">No hay compras registradas.</string>
+    <string name="order_id_format">ID de Orden: %s</string>
+    <string name="order_date_format">Fecha: %s</string>
+    <string name="order_date_unavailable">Fecha: N/D</string>
+    <string name="order_item_format">- %d x %s ($%.2f)</string>
+    <string name="order_no_items">No hay ítems en esta orden.</string>
+    <string name="order_total_format">Total de la Orden: $%.2f</string>
+    <string name="view_order_history_button">Ver Historial de Compras</string>
+    <string name="toast_payment_failed_save_history">Error al guardar historial de compra</string>
 
 
 </resources>

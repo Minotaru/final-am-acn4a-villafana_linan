@@ -54,6 +54,11 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".OrderHistoryActivity"
+            android:exported="false">
+        </activity>
+
     </application>
 
 </manifest>

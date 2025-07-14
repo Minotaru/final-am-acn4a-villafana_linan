@@ -41,6 +41,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale; // para formatear el dinero (peso argentino)
 import java.util.Map;
+import java.util.Date;
+import java.util.Collections;
 
 public class CartActivity extends AppCompatActivity {
 
@@ -386,25 +388,83 @@ public class CartActivity extends AppCompatActivity {
             return;
         }
 
-        DocumentReference cartRef = db.collection("carritos").document(user.getUid());
+        final DocumentReference cartRef = db.collection("carritos").document(user.getUid());
 
-        // Para vaciar el carrito, actualizamos el campo 'items' con una lista vacía
 
-        cartRef.update("items", new ArrayList<>()) // Establece el array de ítems a vacío
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Toast.makeText(CartActivity.this, getString(R.string.toast_payment_success), Toast.LENGTH_LONG).show();
+        // Guardar historial de compra y luego vaciar carrito
+        cartLoadingIndicator.setVisibility(View.VISIBLE);
 
+        cartRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                cartLoadingIndicator.setVisibility(View.GONE);
+                if (documentSnapshot.exists() && documentSnapshot.contains("items")) {
+                    List<Map<String, Object>> itemsInCart = (List<Map<String, Object>>) documentSnapshot.get("items");
+                    if (itemsInCart != null && !itemsInCart.isEmpty()) {
+
+                        // Calcula el total de la orden
+                        double orderTotal = 0.0;
+                        for (Map<String, Object> item : itemsInCart) {
+                            double price = ((Number) item.get("price")).doubleValue();
+                            long quantity = ((Number) item.get("quantity")).longValue();
+                            orderTotal += (price * quantity);
+                        }
+
+                        // Crea un nuevo documento en la colección 'historial_compras'
+                        Map<String, Object> orderData = new HashMap<>();
+                        orderData.put("userId", user.getUid());
+                        orderData.put("timestamp", new Date()); // Fecha y hora de la compra
+                        orderData.put("items", itemsInCart); // Los ítems que se compraron
+                        orderData.put("totalAmount", orderTotal);
+
+                        db.collection("historial_compras")
+                                .add(orderData) // Firestore genera un ID automático para el documento de la orden
+                                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                                    @Override
+                                    public void onSuccess(DocumentReference documentReference) {
+                                        Log.d("CartActivity", "Orden guardada con ID: " + documentReference.getId());
+                                        // Ahora que la orden está guardada, vacía el carrito
+                                        cartRef.update("items", new ArrayList<>()) // Establece el array de ítems a vacío
+                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                    @Override
+                                                    public void onSuccess(Void aVoid) {
+                                                        Toast.makeText(CartActivity.this, getString(R.string.toast_payment_success), Toast.LENGTH_LONG).show();
+
+                                                    }
+                                                })
+                                                .addOnFailureListener(new OnFailureListener() {
+                                                    @Override
+                                                    public void onFailure(@NonNull Exception e) {
+                                                        Toast.makeText(CartActivity.this, getString(R.string.toast_payment_failed) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                                        Log.e("CartActivity", "Error al vaciar carrito después de pago: ", e);
+                                                    }
+                                                });
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        cartLoadingIndicator.setVisibility(View.GONE);
+                                        Toast.makeText(CartActivity.this, getString(R.string.toast_payment_failed_save_history) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        Log.e("CartActivity", "Error al guardar historial de compra: ", e);
+                                    }
+                                });
+                    } else {
+                        Toast.makeText(CartActivity.this, getString(R.string.cart_empty_message), Toast.LENGTH_SHORT).show();
                     }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(CartActivity.this, getString(R.string.toast_payment_failed) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        Log.e("CartActivity", "Error al simular pago y vaciar carrito: ", e);
-                    }
-                });
+                } else {
+                    cartLoadingIndicator.setVisibility(View.GONE);
+                    Toast.makeText(CartActivity.this, getString(R.string.cart_empty_message), Toast.LENGTH_SHORT).show();
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                cartLoadingIndicator.setVisibility(View.GONE);
+                Toast.makeText(CartActivity.this, getString(R.string.toast_cart_load_error) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e("CartActivity", "Error al obtener carrito para pagar: ", e);
+            }
+        });
     }
 
 }
