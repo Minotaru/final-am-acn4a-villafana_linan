@@ -2229,6 +2229,8 @@ int dimen browser_actions_context_menu_min_padding 0x7f060053
 int dimen cardview_compat_inset_shadow 0x7f060054
 int dimen cardview_default_elevation 0x7f060055
 int dimen cardview_default_radius 0x7f060056
+int dimen cart_delete_button_size 0x7f06032b
+int dimen cart_quantity_button_size 0x7f06032c
 int dimen clock_face_margin_start 0x7f060057
 int dimen compat_button_inset_horizontal_material 0x7f060058
 int dimen compat_button_inset_vertical_material 0x7f060059
@@ -3079,6 +3081,7 @@ int drawable ic_call_decline_low 0x7f0700a3
 int drawable ic_cart 0x7f0700a4
 int drawable ic_clear_black_24 0x7f0700a5
 int drawable ic_clock_black_24dp 0x7f0700a6
+int drawable ic_delete 0x7f07010a
 int drawable ic_home 0x7f0700a7
 int drawable ic_keyboard_black_24dp 0x7f0700a8
 int drawable ic_launcher_background 0x7f0700a9
@@ -4069,6 +4072,7 @@ int string common_open_on_phone 0x7f110049
 int string common_signin_button_text 0x7f11004a
 int string common_signin_button_text_long 0x7f11004b
 int string copy_toast_msg 0x7f11004c
+int string delete_item_description 0x7f11011e
 int string error_a11y_label 0x7f11004d
 int string error_empty_email 0x7f11004e
 int string error_empty_email_reset 0x7f11004f
@@ -4250,7 +4254,11 @@ int string store_screen_title 0x7f1100f7
 int string text_forgot_password 0x7f1100f8
 int string text_register 0x7f1100f9
 int string toast_added_to_cart 0x7f1100fa
+int string toast_cart_item_removed 0x7f11011f
+int string toast_cart_item_updated 0x7f110120
 int string toast_cart_load_error 0x7f1100fb
+int string toast_cart_remove_error 0x7f110121
+int string toast_cart_update_error 0x7f110122
 int string toast_figuritas_load_error 0x7f1100fc
 int string toast_figuritas_load_error_main 0x7f1100fd
 int string toast_history_load_error 0x7f11011c

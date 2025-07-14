@@ -9,6 +9,8 @@
     <color name="text_black">#FF000000</color>
     <color name="text_maincard">#A9A9A9</color>
     <color name="top_bar_background">#808def</color>
+    <dimen name="cart_delete_button_size">32dp</dimen>
+    <dimen name="cart_quantity_button_size">40dp</dimen>
     <dimen name="figurita_detail_image_height">200dp</dimen>
     <dimen name="figurita_detail_image_width">200dp</dimen>
     <dimen name="figurita_image_height">100dp</dimen>
@@ -25,6 +27,7 @@
     <string name="cart_screen_title">Mi Carrito</string>
     <string name="cart_total_placeholder">Total: $0.00</string>
     <string name="cat_fifawc22_title">FIFA World Cup 2022</string>
+    <string name="delete_item_description">Eliminar %1$s del carrito</string>
     <string name="error_empty_email">El email no puede estar vacío</string>
     <string name="error_empty_email_reset">Ingrese un email para restablecer la contraseña</string>
     <string name="error_empty_password">La contraseña no puede estar vacía</string>
@@ -83,7 +86,11 @@
     <string name="text_forgot_password">Olvidó la contraseña?</string>
     <string name="text_register">Registrarse</string>
     <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
+    <string name="toast_cart_item_removed">Ítem eliminado del carrito.</string>
+    <string name="toast_cart_item_updated">Cantidad actualizada.</string>
     <string name="toast_cart_load_error">Error al cargar el carrito</string>
+    <string name="toast_cart_remove_error">Error al eliminar ítem del carrito.</string>
+    <string name="toast_cart_update_error">Error al actualizar cantidad.</string>
     <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
     <string name="toast_figuritas_load_error_main">Error al cargar figuritas destacadas</string>
     <string name="toast_history_load_error">Error al cargar el historial de compras</string>

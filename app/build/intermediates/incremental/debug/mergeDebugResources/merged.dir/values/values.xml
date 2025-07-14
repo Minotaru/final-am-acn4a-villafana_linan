@@ -1067,6 +1067,8 @@
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
+    <dimen name="cart_delete_button_size">32dp</dimen>
+    <dimen name="cart_quantity_button_size">40dp</dimen>
     <dimen name="clock_face_margin_start">64dp</dimen>
     <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
     <dimen name="compat_button_inset_vertical_material">6dp</dimen>
@@ -2057,6 +2059,7 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
+    <string name="delete_item_description">Eliminar %1$s del carrito</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>
@@ -2248,7 +2251,11 @@
     <string name="text_forgot_password">Olvidó la contraseña?</string>
     <string name="text_register">Registrarse</string>
     <string name="toast_added_to_cart">Se agregó %1$s al carrito.</string>
+    <string name="toast_cart_item_removed">Ítem eliminado del carrito.</string>
+    <string name="toast_cart_item_updated">Cantidad actualizada.</string>
     <string name="toast_cart_load_error">Error al cargar el carrito</string>
+    <string name="toast_cart_remove_error">Error al eliminar ítem del carrito.</string>
+    <string name="toast_cart_update_error">Error al actualizar cantidad.</string>
     <string name="toast_figuritas_load_error">Error al cargar figuritas</string>
     <string name="toast_figuritas_load_error_main">Error al cargar figuritas destacadas</string>
     <string name="toast_history_load_error">Error al cargar el historial de compras</string>

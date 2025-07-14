@@ -89,6 +89,11 @@
     <string name="order_total_format">Total de la Orden: $%.2f</string>
     <string name="view_order_history_button">Ver Historial de Compras</string>
     <string name="toast_payment_failed_save_history">Error al guardar historial de compra</string>
+    <string name="toast_cart_item_updated">Cantidad actualizada.</string>
+    <string name="toast_cart_update_error">Error al actualizar cantidad.</string>
+    <string name="toast_cart_item_removed">Ítem eliminado del carrito.</string>
+    <string name="toast_cart_remove_error">Error al eliminar ítem del carrito.</string>
+    <string name="delete_item_description">Eliminar %1$s del carrito</string>
 
 
 </resources>

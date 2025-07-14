@@ -2230,6 +2230,8 @@ dimen browser_actions_context_menu_min_padding
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
+dimen cart_delete_button_size
+dimen cart_quantity_button_size
 dimen clock_face_margin_start
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
@@ -3080,6 +3082,7 @@ drawable ic_call_decline_low
 drawable ic_cart
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_delete
 drawable ic_home
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -4070,6 +4073,7 @@ string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
 string copy_toast_msg
+string delete_item_description
 string error_a11y_label
 string error_empty_email
 string error_empty_email_reset
@@ -4251,7 +4255,11 @@ string store_screen_title
 string text_forgot_password
 string text_register
 string toast_added_to_cart
+string toast_cart_item_removed
+string toast_cart_item_updated
 string toast_cart_load_error
+string toast_cart_remove_error
+string toast_cart_update_error
 string toast_figuritas_load_error
 string toast_figuritas_load_error_main
 string toast_history_load_error

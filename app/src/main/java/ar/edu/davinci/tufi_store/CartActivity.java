@@ -35,6 +35,7 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.ListenerRegistration; // para el listener en tiempo real
+import com.google.firebase.firestore.Transaction;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -317,48 +318,119 @@ public class CartActivity extends AppCompatActivity {
                 }
             });
 
-            LinearLayout textLayout = new LinearLayout(this);
-            textLayout.setLayoutParams(new LinearLayout.LayoutParams(
+            LinearLayout textAndControlsLayout = new LinearLayout(this);
+            LinearLayout.LayoutParams textAndControlsParams = new LinearLayout.LayoutParams(
                     0, // Ocupa el espacio restante
                     LinearLayout.LayoutParams.WRAP_CONTENT,
                     1.0f // Peso para expandirse
-            ));
-            textLayout.setOrientation(LinearLayout.VERTICAL);
+            );
+            textAndControlsParams.weight = 1.0f;
+            textAndControlsLayout.setLayoutParams(textAndControlsParams);
+            textAndControlsLayout.setOrientation(LinearLayout.VERTICAL);
 
             TextView albumTitleTextView = new TextView(this);
             albumTitleTextView.setText(albumTitle);
             albumTitleTextView.setTextSize(16);
             albumTitleTextView.setTypeface(null, android.graphics.Typeface.BOLD);
             albumTitleTextView.setTextColor(ContextCompat.getColor(this, R.color.text_black));
-            textLayout.addView(albumTitleTextView);
+            textAndControlsLayout.addView(albumTitleTextView);
 
             TextView figuritaNameTextView = new TextView(this);
             figuritaNameTextView.setText(figuritaName);
             figuritaNameTextView.setTextSize(14);
             figuritaNameTextView.setTextColor(ContextCompat.getColor(this, R.color.text_maincard));
-            textLayout.addView(figuritaNameTextView);
+            textAndControlsLayout.addView(figuritaNameTextView);
 
             TextView itemPriceTextView = new TextView(this);
             itemPriceTextView.setText(String.format(Locale.getDefault(), "Unitario: $%.2f", price));
             itemPriceTextView.setTextSize(14);
             itemPriceTextView.setTextColor(ContextCompat.getColor(this, R.color.text_black));
-            textLayout.addView(itemPriceTextView);
+            textAndControlsLayout.addView(itemPriceTextView);
 
             TextView quantityTextView = new TextView(this);
             quantityTextView.setText(String.format(Locale.getDefault(), "Cantidad: %d", quantity));
             quantityTextView.setTextSize(14);
             quantityTextView.setTextColor(ContextCompat.getColor(this, R.color.text_black));
-            textLayout.addView(quantityTextView);
+            textAndControlsLayout.addView(quantityTextView);
 
             TextView subtotalTextView = new TextView(this);
             subtotalTextView.setText(String.format(Locale.getDefault(), "Subtotal: $%.2f", (price * quantity)));
             subtotalTextView.setTextSize(16);
             subtotalTextView.setTypeface(null, android.graphics.Typeface.BOLD);
             subtotalTextView.setTextColor(ContextCompat.getColor(this, R.color.text_black));
-            textLayout.addView(subtotalTextView);
+            textAndControlsLayout.addView(subtotalTextView);
+
+            // Botones de cantidad y eliminación
+            LinearLayout quantityControlsLayout = new LinearLayout(this);
+            quantityControlsLayout.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.WRAP_CONTENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            ));
+            quantityControlsLayout.setOrientation(LinearLayout.HORIZONTAL);
+            quantityControlsLayout.setGravity(android.view.Gravity.CENTER_VERTICAL);
+            quantityControlsLayout.setPadding(0, 8, 0, 0);
+
+            // Botón de Decrementar Cantidad
+            Button minusButton = new Button(this);
+            LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(
+                    getResources().getDimensionPixelSize(R.dimen.cart_quantity_button_size),
+                    getResources().getDimensionPixelSize(R.dimen.cart_quantity_button_size)
+            );
+            buttonParams.setMarginEnd(8);
+            minusButton.setLayoutParams(buttonParams);
+            minusButton.setText("-");
+            minusButton.setTextSize(18);
+            minusButton.setBackgroundResource(R.drawable.rounded_button_background); // Reutilizar el estilo
+            minusButton.setTextColor(ContextCompat.getColor(this, R.color.app_name));
+            minusButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    updateFiguritaQuantityInCart(figuritaId, (int) quantity - 1);
+                }
+            });
+            quantityControlsLayout.addView(minusButton);
+
+            // Botón de Incrementar Cantidad
+            Button plusButton = new Button(this);
+            plusButton.setLayoutParams(buttonParams); // Mismo tamaño
+            plusButton.setText("+");
+            plusButton.setTextSize(18);
+            plusButton.setBackgroundResource(R.drawable.rounded_button_background); // Reutilizar el estilo
+            plusButton.setTextColor(ContextCompat.getColor(this, R.color.app_name));
+            plusButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    updateFiguritaQuantityInCart(figuritaId, (int) quantity + 1);
+                }
+            });
+            quantityControlsLayout.addView(plusButton);
+
+            textAndControlsLayout.addView(quantityControlsLayout); // Añadir los controles de cantidad al layout de texto
+
+            // Botón de Eliminar Ítem
+            ImageView deleteButton = new ImageView(this);
+            LinearLayout.LayoutParams deleteButtonParams = new LinearLayout.LayoutParams(
+                    getResources().getDimensionPixelSize(R.dimen.cart_delete_button_size),
+                    getResources().getDimensionPixelSize(R.dimen.cart_delete_button_size)
+            );
+            deleteButtonParams.setMarginStart(16);
+            deleteButton.setLayoutParams(deleteButtonParams);
+            deleteButton.setImageResource(R.drawable.ic_delete); // Necesitaremos este drawable
+            deleteButton.setColorFilter(ContextCompat.getColor(this, android.R.color.darker_gray)); // Color del icono
+            deleteButton.setClickable(true);
+            deleteButton.setFocusable(true);
+            deleteButton.setContentDescription(getString(R.string.delete_item_description, figuritaName));
+            deleteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    removeFiguritaFromCart(figuritaId);
+                }
+            });
 
             innerLayout.addView(figuritaImageView);
-            innerLayout.addView(textLayout);
+            innerLayout.addView(textAndControlsLayout);
+            innerLayout.addView(deleteButton);
+
 
             cardView.addView(innerLayout);
             cartItemsContainer.addView(cardView);
@@ -425,7 +497,7 @@ public class CartActivity extends AppCompatActivity {
                                     public void onSuccess(DocumentReference documentReference) {
                                         Log.d("CartActivity", "Orden guardada con ID: " + documentReference.getId());
                                         // Ahora que la orden está guardada, vacía el carrito
-                                        cartRef.update("items", new ArrayList<>()) // Establece el array de ítems a vacío
+                                        cartRef.update("items", new ArrayList<>())
                                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                     @Override
                                                     public void onSuccess(Void aVoid) {
@@ -465,6 +537,101 @@ public class CartActivity extends AppCompatActivity {
                 Toast.makeText(CartActivity.this, getString(R.string.toast_cart_load_error) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.e("CartActivity", "Error al obtener carrito para pagar: ", e);
             }
+        });
+    }
+
+    private void updateFiguritaQuantityInCart(final String figuritaId, final int newQuantity) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, getString(R.string.toast_login_required), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        final DocumentReference cartRef = db.collection("carritos").document(user.getUid());
+
+        if (newQuantity <= 0) { // Si la nueva cantidad es 0 o menos, remover el ítem
+            removeFiguritaFromCart(figuritaId);
+            return;
+        }
+
+        db.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot snapshot = transaction.get(cartRef);
+
+                List<Map<String, Object>> currentCartItems;
+                if (snapshot.exists() && snapshot.contains("items")) {
+                    currentCartItems = (List<Map<String, Object>>) snapshot.get("items");
+                    if (currentCartItems == null) {
+                        currentCartItems = new ArrayList<>();
+                    }
+                } else {
+                    currentCartItems = new ArrayList<>();
+                }
+
+                List<Map<String, Object>> updatedCartItems = new ArrayList<>(currentCartItems);
+
+                for (Map<String, Object> item : updatedCartItems) {
+                    if (item.get("figuritaId") != null && item.get("figuritaId").equals(figuritaId)) {
+                        item.put("quantity", newQuantity);
+                        break;
+                    }
+                }
+
+                transaction.set(cartRef, new HashMap<String, Object>() {{
+                    put("items", updatedCartItems);
+                }});
+                return null;
+            }
+        }).addOnSuccessListener(aVoid -> {
+            Toast.makeText(CartActivity.this, getString(R.string.toast_cart_item_updated), Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> {
+            Toast.makeText(CartActivity.this, getString(R.string.toast_cart_update_error) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("CartActivity", "Error al actualizar cantidad: ", e);
+        });
+    }
+
+    private void removeFiguritaFromCart(final String figuritaId) {
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null) {
+            Toast.makeText(this, getString(R.string.toast_login_required), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        final DocumentReference cartRef = db.collection("carritos").document(user.getUid());
+
+        db.runTransaction(new Transaction.Function<Void>() {
+            @Override
+            public Void apply(@NonNull Transaction transaction) throws FirebaseFirestoreException {
+                DocumentSnapshot snapshot = transaction.get(cartRef);
+
+                List<Map<String, Object>> currentCartItems;
+                if (snapshot.exists() && snapshot.contains("items")) {
+                    currentCartItems = (List<Map<String, Object>>) snapshot.get("items");
+                    if (currentCartItems == null) {
+                        currentCartItems = new ArrayList<>();
+                    }
+                } else {
+                    currentCartItems = new ArrayList<>();
+                }
+
+                List<Map<String, Object>> updatedCartItems = new ArrayList<>();
+                for (Map<String, Object> item : currentCartItems) {
+                    if (item.get("figuritaId") != null && !item.get("figuritaId").equals(figuritaId)) {
+                        updatedCartItems.add(item); // Añadir todos los ítems excepto el que se quiere eliminar
+                    }
+                }
+
+                transaction.set(cartRef, new HashMap<String, Object>() {{
+                    put("items", updatedCartItems);
+                }});
+                return null;
+            }
+        }).addOnSuccessListener(aVoid -> {
+            Toast.makeText(CartActivity.this, getString(R.string.toast_cart_item_removed), Toast.LENGTH_SHORT).show();
+        }).addOnFailureListener(e -> {
+            Toast.makeText(CartActivity.this, getString(R.string.toast_cart_remove_error) + ": " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e("CartActivity", "Error al remover figurita: ", e);
         });
     }
 

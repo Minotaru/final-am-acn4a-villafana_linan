@@ -9,6 +9,8 @@ color holo_blue_light
 color text_black
 color text_maincard
 color top_bar_background
+dimen cart_delete_button_size
+dimen cart_quantity_button_size
 dimen figurita_detail_image_height
 dimen figurita_detail_image_width
 dimen figurita_image_height
@@ -17,6 +19,7 @@ dimen location_image_height
 dimen location_image_width
 drawable ic_back_arrow
 drawable ic_cart
+drawable ic_delete
 drawable ic_home
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -137,6 +140,7 @@ string cart_label
 string cart_screen_title
 string cart_total_placeholder
 string cat_fifawc22_title
+string delete_item_description
 string error_empty_email
 string error_empty_email_reset
 string error_empty_password
@@ -195,7 +199,11 @@ string store_screen_title
 string text_forgot_password
 string text_register
 string toast_added_to_cart
+string toast_cart_item_removed
+string toast_cart_item_updated
 string toast_cart_load_error
+string toast_cart_remove_error
+string toast_cart_update_error
 string toast_figuritas_load_error
 string toast_figuritas_load_error_main
 string toast_history_load_error
