@@ -46,6 +46,7 @@ import com.google.firebase.firestore.FirebaseFirestoreException; //Para el error
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.Transaction;
+import com.google.firebase.firestore.Query;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -283,6 +284,7 @@ public class MainActivity extends AppCompatActivity {
         mainLoadingIndicator.setVisibility(View.VISIBLE); // Muestra el indicador de carga
 
         db.collection("figuritas") // Es el nombre de la coleccion donde se guardan mis figuritas en Firestore
+                .orderBy("timestamp", Query.Direction.DESCENDING) // Ordena por timestamp de forma descendente
                 .limit(2) // Limita a 2 figuritas, para simular "últimos agregados"
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
