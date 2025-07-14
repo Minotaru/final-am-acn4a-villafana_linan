@@ -216,6 +216,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Obtener referencia al LinearLayout del botón de Perfil en el Bottom Navigation
+        bottomUsers = findViewById(R.id.bottom_users);
+
+        // Configurar listener para el botón de Perfil
+        bottomUsers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         //Referencia al ImageView del botón del ícono de usuario en navbar
         userButton = findViewById(R.id.user_button);

@@ -190,7 +190,8 @@ public class FiguritaDetailActivity extends AppCompatActivity {
         bottomUsersDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(FiguritaDetailActivity.this, "Botón de Perfil clicado en Detalle de Figurita", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(FiguritaDetailActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
     }

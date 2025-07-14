@@ -190,7 +190,8 @@ public class StoreActivity extends AppCompatActivity {
         bottomUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(StoreActivity.this, "Botón de Perfil clicado en Tienda", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(StoreActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 

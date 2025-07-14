@@ -26,6 +26,14 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
+
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -50,6 +58,7 @@ public class LocationsActivity extends AppCompatActivity {
 
     // Para Firebase Auth (LogOut)
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
 
 //Reemplazar con la URL real del archivo JSON
     private static final String JSON_URL = "https://raw.githubusercontent.com/DeniseDesu/parcial-1-am-acn4a-villafana_linan-villafana_linan/refs/heads/main/informe/Repositorio%20-%20Volley/locations.json";
@@ -61,6 +70,7 @@ public class LocationsActivity extends AppCompatActivity {
 
         //Inicializa Firebase Auth para el logout
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         locationsContainer = findViewById(R.id.locations_container);
         loadingIndicator = findViewById(R.id.loading_indicator);
@@ -142,7 +152,8 @@ public class LocationsActivity extends AppCompatActivity {
         bottomUsers.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(LocationsActivity.this, "Botón de Perfil clicado en Sucursales", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LocationsActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 

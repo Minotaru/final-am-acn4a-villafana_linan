@@ -61,6 +61,24 @@
     <string name="toast_cart_load_error">Error al cargar el carrito</string>
     <string name="toast_payment_success">¡Compra realizada con éxito!</string>
     <string name="toast_payment_failed">Error al procesar el pago</string>
+    <string name="profile_screen_title">Mi Perfil</string>
+    <string name="profile_email_label">Email</string>
+    <string name="profile_name_label">Nombre</string>
+    <string name="profile_name_hint">Ingrese su nombre</string>
+    <string name="profile_lastname_label">Apellido</string>
+    <string name="profile_lastname_hint">Ingrese su apellido</string>
+    <string name="profile_address_label">Dirección</string>
+    <string name="profile_address_hint">Ingrese su dirección</string>
+    <string name="profile_phone_label">Teléfono</string>
+    <string name="profile_phone_hint">Ingrese su teléfono</string>
+    <string name="profile_save_button">Guardar Cambios</string>
+    <string name="toast_profile_save_success">Perfil actualizado con éxito</string>
+    <string name="toast_profile_save_error">Error al guardar el perfil</string>
+    <string name="toast_profile_load_error">Error al cargar el perfil</string>
+    <string name="toast_profile_not_found">Perfil no encontrado. Puede que sea nuevo.</string>
+    <string name="toast_registration_success_profile">¡Registro exitoso! Perfil creado. Inicie sesión.</string>
+    <string name="toast_registration_success_profile_error">Registro exitoso, pero falló al crear el perfil inicial:</string>
+
 
 
 </resources>
