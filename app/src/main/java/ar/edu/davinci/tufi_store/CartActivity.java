@@ -175,7 +175,8 @@ public class CartActivity extends AppCompatActivity {
         bottomUsersCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(CartActivity.this, "Botón de Perfil clicado en Carrito", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(CartActivity.this, ProfileActivity.class);
+                startActivity(intent);
             }
         });
 
