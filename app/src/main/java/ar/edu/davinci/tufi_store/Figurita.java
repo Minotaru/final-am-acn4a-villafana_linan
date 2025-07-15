@@ -1,11 +1,14 @@
 package ar.edu.davinci.tufi_store;
 
+import java.util.Date;
+
 public class Figurita {
     private String albumTitle;
     private String figuritaName;
     private String imageUrl;
     private double price; // Usamos double para el precio
     private String documentId; // para el ID del documento de Firestore
+    private Date timestamp;
 
     // Constructor vacío requerido por Firestore para la deserialización
     public Figurita() {
@@ -40,6 +43,10 @@ public class Figurita {
         return documentId;
     }
 
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
     // Setters - Firestore los usa si no tienes un constructor con todos los argumentos
     public void setAlbumTitle(String albumTitle) {
         this.albumTitle = albumTitle;
@@ -59,6 +66,10 @@ public class Figurita {
 
     public void setDocumentId(String documentId) {
         this.documentId = documentId;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
 }
